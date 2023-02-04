@@ -5,7 +5,18 @@
 }
 
 .screen{
-    background-color: blue;
+    /* background-color: blue; */
     width: 600px;
     height: 300px;
 }
+
+
+.flex{
+    flex-direction: row;
+     /* color: black; */
+     display: flex;
+     font-size: xx-large;
+     justify-content: center;
+    }
+    
+    
