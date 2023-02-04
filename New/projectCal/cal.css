@@ -1,49 +1,211 @@
 .panel{
-    background-color: black;
-    width: 600px;
-    height: 30px;
+    background-color: black; 
+    width: 500px;
+    height: 500px
 }
 
 .screen{
-    /* background-color: blue; */
-    width: 600px;
-    height: 300px;
+    
+    width: 500px;
+    height: 200px;
 }
 
 
 .flex{
+    /* background-color: aqua; */
+    height: 300px;
     flex-direction: row;
-     /* color: black; */
+     color: white; 
      display: flex;
      font-size: xx-large;
      justify-content: center;
     }
     
     .first{
-        background-color: aqua;
+        width: 500px;
         padding: 40px; 
-        margin: 40px;
         border: 40px;
 
     }
     .second{
-        background-color: aqua;
+        width: 500px;
         padding: 40px; 
-        margin: 40px;
         border: 40px;
     
     
-    }.third{
-        background-color: aqua;
+    }
+    .third{
+        width: 500px;
         padding: 40px; 
-        margin: 40px;
-        border: 40px;
-    
-    
-    }.fourth{
-        background-color: aqua;
-        padding: 40px; 
-        margin: 40px;
         border: 40px;
     }
+    .fourth{
+
+        width: 500px;
+        padding: 40px; 
+        border: 40px;
+    }
+
+    .clear{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+    }
+    .seven{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .four{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .one{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .zero{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .pminus{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+    }
+    .eight{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+
+    .five{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .two{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .percent{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+    }
+    .eight{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .five{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    
+    }
+    .two{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .percent{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+    }
+    .nine{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .six{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .three{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .dot{
+        background-color: aliceblue;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .divide{
+        background-color: orange;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+    }
+    .multiply{
+        background-color: orange;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .minus{
+        background-color: orange;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .plus{
+        background-color: orange;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .equal{
+        background-color:orange;
+        color: black;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+
+
+    
+    
     
