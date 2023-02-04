@@ -19,4 +19,12 @@
      justify-content: center;
     }
     
+    .first{
+        background-color: aqua;
+        padding: 40px; 
+        margin: 40px;
+        border: 40px;
+    
+    
+    }
     
