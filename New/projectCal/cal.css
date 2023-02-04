@@ -1,5 +1,11 @@
 .panel{
     background-color: black;
     width: 600px;
-    height: 330px;
+    height: 30px;
+}
+
+.screen{
+    background-color: blue;
+    width: 600px;
+    height: 300px;
 }
