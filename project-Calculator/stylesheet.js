@@ -1,6 +1,15 @@
 // DOM ELEMENTS
 const hour = document.querySelector(".hour");
 const minute = document.querySelector(".minute");
+const clear = document.querySelector(".ac")
+const percent = document.querySelector("percent")
+const pminus = document.querySelector(".pm")
+
+const division = document.querySelector(".division")
+const multiplication = document.querySelector(".multiplication")
+const subtraction = document.querySelector(".subtraction")
+const addition = document.querySelector(".addition")
+const equal = document.querySelector(".equal")
 
 
 
@@ -20,3 +29,5 @@ if (currentHour > 12) {
 }
 setInterval(updateTime, 1000);
 updateTime();
+
+
