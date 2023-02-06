@@ -8,11 +8,15 @@ const minute = document.querySelector(".minute");
 // set time 
 const updateTime = () => {
         const currentTime = new Date();
-        const currentHour = currentTime.getHours();
+
+        let currentHour = currentTime.getHours();
         const currentMinute = currentTime.getMinutes();
 
+if (currentHour > 12) {
+    currentHour -= 12;
+}
         hour.textContent = currentHour.toString();
-        minute.textContent = currentMinute.toString();
+        minute.textContent = currentMinute.toString().padStart(2,"0");
 }
 setInterval(updateTime, 1000);
 updateTime();
