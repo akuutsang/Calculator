@@ -25,6 +25,9 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
+.clock{
+    font-size: xx-large;
+}
 
 .display{
     font-size: 130px;
