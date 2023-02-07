@@ -36,6 +36,22 @@ const getDisplayAsString = () => {
     return currentDisplayString.split(",").join("");
 }
 
+const setDisplayAsValue = (displayString) => {
+    if (displayString[displayString.length - 1] === "." ){
+        display.textContent += ".";
+        return;   
+    }
+    const [wholeNumStr, decimalStr] = displayString.split(".");
+    // console.log(wholeNumStr, decimalStr) and see how it displays inputs
+    if (decimalStr) {
+        display.textContent = parseFloat(wholeNumStr).toLocaleString() + '.' + decimalStr;
+    }else{
+    display.textContent = parseFloat(wholeNumStr).toLocaleString();
+}
+}
+// setting currentDisplayString.split(","). join becomes necessary to stop 
+// the effect of .toLocaleString i.e limiting numbers 
+
 const getDisplayAsNumber = () => {
     return parseFloat(getDisplayAsString());
 }
@@ -43,13 +59,14 @@ const getDisplayAsNumber = () => {
 const handleNumClick = (numString) => {
   const currentDisplayString = getDisplayAsString();
   if (currentDisplayString === "0") {
-    display.textContent = numString
+    setDisplayAsValue(numString);
   }
   else{
-    display.textContent = parseFloat(currentDisplayString + numString).toLocaleString();
-
+    setDisplayAsValue(currentDisplayString + numString);
   }
 }
+
+//  note anytime you use .toLocaleString(). It limits the number of inputs
 
 // Add event listeners to buttons and numbers.
 
@@ -63,9 +80,10 @@ for (let i = 0; i < numberArray.length; i++) {
 decimal.addEventListener("click", () => {
     const currentDisplayString = getDisplayAsString();
     if (!currentDisplayString.includes(".")) {
-        display.textContent = currentDisplayString + ".";
+        setDisplayAsValue(currentDisplayString + ".")
+    
     }
-    display.textContent = currentDisplayString + ".";
+    
 })
 
 
