@@ -65,10 +65,10 @@ const handleNumClick = (numString) => {
     setDisplayAsString(currentDisplayString + numString);
   }
 }
-
 //  note anytime you use .toLocaleString(). It limits the number of inputs
-// add event listeners to function buttons ie. AC, pminus % buttons
 
+
+// add event listeners to function buttons ie. AC, pminus % buttons
 clear.addEventListener("click", () => {
     setDisplayAsString("0");
 });
@@ -92,9 +92,28 @@ percent.addEventListener("click", () => {
     const newDisplayNum = currentDisplayNum / 100;
     setDisplayAsString(newDisplayNum.toString());
 });
+// add event listerners for operators
+addition.addEventListener("click", () => {
+handleOperatorClick("addition")
+})
+
+subtraction.addEventListener("click", () => {
+    handleOperatorClick("subtraction")
+    })
+
+multiplication.addEventListener("click", () => {
+    handleOperatorClick("multiplication")
+    }) 
+
+division.addEventListener("click", () => {
+    handleOperatorClick("division")
+    })    
+
+equal.addEventListener("click", () => {
+    handleOperatorClick("equal")
+    })    
 
 // Add event listeners to buttons and numbers.
-
 for (let i = 0; i < numberArray.length; i++) {
     const number = numberArray[i];
     number.addEventListener("click", () => {
