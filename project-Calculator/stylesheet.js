@@ -5,6 +5,8 @@ const clear = document.querySelector(".ac");
 const percent = document.querySelector("percent");
 const pminus = document.querySelector(".pm");
 
+const display = document.querySelector(".display")
+
 const division = document.querySelector(".division");
 const multiplication = document.querySelector(".multiplication");
 const subtraction = document.querySelector(".subtraction");
@@ -26,6 +28,36 @@ const nine = document.querySelector(".number-9");
 const numberArray = [
     zero, one, two, three, four, five, six, seven, eight, nine
 ];
+
+// functions
+const handleNumClick = (numString) => {
+  const currentDisplayString = display.textContent;
+
+  if (currentDisplayString === "0") {
+    display.textContent = numString
+  }
+  else{
+    display.textContent = parseFloat(currentDisplayString + numString).toLocaleString();
+  }
+  
+
+    
+}
+
+
+
+// Add event listeners to buttons and numbers.
+
+for (let i = 0; i < numberArray.length; i++) {
+    const number = numberArray[i];
+    number.addEventListener("click", () => {
+        handleNumClick(i.toString())
+    });
+
+    
+}
+
+
 
 
 // set time (to achieve that, we will need some methods such as; Date(), .getHours(), .getMinutes())
