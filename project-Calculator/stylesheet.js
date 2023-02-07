@@ -2,7 +2,7 @@
 const hour = document.querySelector(".hour");
 const minute = document.querySelector(".minute");
 const clear = document.querySelector(".ac");
-const percent = document.querySelector("percent");
+const percent = document.querySelector(".percent");
 const pminus = document.querySelector(".pm");
 
 const display = document.querySelector(".display")
@@ -36,7 +36,7 @@ const getDisplayAsString = () => {
     return currentDisplayString.split(",").join("");
 }
 
-const setDisplayAsValue = (displayString) => {
+const setDisplayAsString = (displayString) => {
     if (displayString[displayString.length - 1] === "." ){
         display.textContent += ".";
         return;   
@@ -59,18 +59,39 @@ const getDisplayAsNumber = () => {
 const handleNumClick = (numString) => {
   const currentDisplayString = getDisplayAsString();
   if (currentDisplayString === "0") {
-    setDisplayAsValue(numString);
+    setDisplayAsString(numString);
   }
   else{
-    setDisplayAsValue(currentDisplayString + numString);
+    setDisplayAsString(currentDisplayString + numString);
   }
 }
 
 //  note anytime you use .toLocaleString(). It limits the number of inputs
 // add event listeners to function buttons ie. AC, pminus % buttons
+
 clear.addEventListener("click", () => {
-    setDisplayAsValue("0");
+    setDisplayAsString("0");
+});
+
+pminus.addEventListener("click", () => {
+const currentDisplayNum = getDisplayAsNumber();
+const currentDisplayString = getDisplayAsString();
+if (currentDisplayString === "-0") {
+    setDisplayAsString("0");
+    return;
+}
+if (currentDisplayNum >= 0) {
+    setDisplayAsString("-" + currentDisplayString)
+}else{
+    setDisplayAsString(currentDisplayString.substring(1));
+}
 })
+
+percent.addEventListener("click", () => {
+    const currentDisplayNum = getDisplayAsNumber();
+    const newDisplayNum = currentDisplayNum / 100;
+    setDisplayAsString(newDisplayNum.toString());
+});
 
 // Add event listeners to buttons and numbers.
 
@@ -84,14 +105,11 @@ for (let i = 0; i < numberArray.length; i++) {
 decimal.addEventListener("click", () => {
     const currentDisplayString = getDisplayAsString();
     if (!currentDisplayString.includes(".")) {
-        setDisplayAsValue(currentDisplayString + ".")
+        setDisplayAsString(currentDisplayString + ".")
     
     }
     
 })
-
-
-
 
 // set time (to achieve that, we will need some methods such as; Date(), .getHours(), .getMinutes())
 const updateTime = () => {
