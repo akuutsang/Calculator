@@ -67,6 +67,10 @@ const handleNumClick = (numString) => {
 }
 
 //  note anytime you use .toLocaleString(). It limits the number of inputs
+// add event listeners to function buttons ie. AC, pminus % buttons
+clear.addEventListener("click", () => {
+    setDisplayAsValue("0");
+})
 
 // Add event listeners to buttons and numbers.
 
