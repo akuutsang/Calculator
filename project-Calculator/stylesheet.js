@@ -30,21 +30,26 @@ const numberArray = [
 ];
 
 // functions
-const handleNumClick = (numString) => {
-  const currentDisplayString = display.textContent;
 
+const getDisplayAsString = () => {
+    const currentDisplayString = display.textContent;
+    return currentDisplayString.split(",").join("");
+}
+
+const getDisplayAsNumber = () => {
+    return parseFloat(getDisplayAsString());
+}
+
+const handleNumClick = (numString) => {
+  const currentDisplayString = getDisplayAsString();
   if (currentDisplayString === "0") {
     display.textContent = numString
   }
   else{
     display.textContent = parseFloat(currentDisplayString + numString).toLocaleString();
+
   }
-  
-
-    
 }
-
-
 
 // Add event listeners to buttons and numbers.
 
@@ -52,10 +57,16 @@ for (let i = 0; i < numberArray.length; i++) {
     const number = numberArray[i];
     number.addEventListener("click", () => {
         handleNumClick(i.toString())
-    });
-
-    
+    }); 
 }
+
+decimal.addEventListener("click", () => {
+    const currentDisplayString = getDisplayAsString();
+    if (!currentDisplayString.includes(".")) {
+        display.textContent = currentDisplayString + ".";
+    }
+    display.textContent = currentDisplayString + ".";
+})
 
 
 
