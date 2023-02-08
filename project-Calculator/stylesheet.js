@@ -29,6 +29,10 @@ const numberArray = [
     zero, one, two, three, four, five, six, seven, eight, nine
 ];
 
+// variables
+let displayStoreInMemory = null;
+let operatorInMemory = null;
+
 // functions
 
 const getDisplayAsString = () => {
@@ -118,7 +122,7 @@ division.addEventListener("click", () => {
     })    
 
 equal.addEventListener("click", () => {
-    handleOperatorClick("equal")
+   
     })    
 
 // Add event listeners to buttons and numbers.
