@@ -104,6 +104,8 @@ const handleOperatorClick = (operation) => {
 // add event listeners to function buttons ie. AC, pminus % buttons
 clear.addEventListener("click", () => {
     setDisplayAsString("0");
+    displayStoreInMemory = null;
+    operatorInMemory = null;
 });
 
 pminus.addEventListener("click", () => {
@@ -124,6 +126,9 @@ percent.addEventListener("click", () => {
     const currentDisplayNum = getDisplayAsNumber();
     const newDisplayNum = currentDisplayNum / 100;
     setDisplayAsString(newDisplayNum.toString());
+    displayStoreInMemory = null;
+    operatorInMemory = null;
+    
 });
 // add event listerners for operators
 addition.addEventListener("click", () => {
@@ -143,7 +148,9 @@ division.addEventListener("click", () => {
     })    
 
 equal.addEventListener("click", () => {
-   
+   if (!displayStoreInMemory) {
+    
+   }
     })    
 
 // Add event listeners to buttons and numbers.
