@@ -74,30 +74,37 @@ const handleNumClick = (numString) => {
   }
 }
 
+
+const getResultOfOperationAsString = () => {
+    const currentDisplayNum = getDisplayAsNumber();
+    const displayNumInMemory = parseFloat(displayStoreInMemory);
+    let newDisplayNum;
+    if (operatorInMemory === "addition") {
+       newDisplayNum = displayNumInMemory + currentDisplayNum;
+    }else if(operatorInMemory === "subtraction"){
+        newDisplayNum = displayNumInMemory - currentDisplayNum;
+    } else if(operatorInMemory === "multiplication"){
+        newDisplayNum = displayNumInMemory * currentDisplayNum;
+    }else if(operatorInMemory === "division"){
+        newDisplayNum = displayNumInMemory / currentDisplayNum;
+    }
+    return newDisplayNum.toString();
+}
+
 const handleOperatorClick = (operation) => {
-    const currentDisplayString =getDisplayAsString;
-    const currentDisplayNum = getDisplayAsNumber;
+    const currentDisplayString = getDisplayAsString();
+
     if (!displayStoreInMemory) {
-        displayStoreInMemory = currentDisplayString();
+        displayStoreInMemory =currentDisplayString;
         operatorInMemory = operation;
         setDisplayAsString("0");
         return;
     }
-    const displayStoreInMemory = parseFloat(displayStoreInMemory);
-    let newDisplayNum;
-    if (operatorInMemory === "addition") {
-       newDisplayNum = displayStoreInMemory + currentDisplayNum;
-    }else if(operatorInMemory === "subtraction"){
-        newDisplayNum = displayStoreInMemory - currentDisplayNum;
-    } else if(operatorInMemory === "multiplication"){
-        newDisplayNum = displayStoreInMemory * currentDisplayNum;
-    }else if(operatorInMemory === "division"){
-        newDisplayNum = displayStoreInMemory / currentDisplayNum;
-    }
-    displayStoreInMemory = newDisplayNum.toString();
+    displayStoreInMemory = getResultOfOperationAsString();
     operatorInMemory = operation;
-    setDisplayAsString("0")
-}
+    setDisplayAsString("0");
+};
+
 //  note anytime you use .toLocaleString(). It limits the number of inputs
 
 
@@ -128,7 +135,6 @@ percent.addEventListener("click", () => {
     setDisplayAsString(newDisplayNum.toString());
     displayStoreInMemory = null;
     operatorInMemory = null;
-    
 });
 // add event listerners for operators
 addition.addEventListener("click", () => {
@@ -148,9 +154,12 @@ division.addEventListener("click", () => {
     })    
 
 equal.addEventListener("click", () => {
-   if (!displayStoreInMemory) {
-    
-   }
+    if (displayStoreInMemory) {
+        setDisplayAsString(getResultOfOperationAsString());
+        displayStoreInMemory = null;
+        operatorInMemory = null;
+    }
+   
     })    
 
 // Add event listeners to buttons and numbers.
