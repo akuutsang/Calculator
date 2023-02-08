@@ -76,12 +76,27 @@ const handleNumClick = (numString) => {
 
 const handleOperatorClick = (operation) => {
     const currentDisplayString =getDisplayAsString;
+    const currentDisplayNum = getDisplayAsNumber;
     if (!displayStoreInMemory) {
         displayStoreInMemory = currentDisplayString();
         operatorInMemory = operation;
         setDisplayAsString("0");
-        return
+        return;
     }
+    const displayStoreInMemory = parseFloat(displayStoreInMemory);
+    let newDisplayNum;
+    if (operatorInMemory === "addition") {
+       newDisplayNum = displayStoreInMemory + currentDisplayNum;
+    }else if(operatorInMemory === "subtraction"){
+        newDisplayNum = displayStoreInMemory - currentDisplayNum;
+    } else if(operatorInMemory === "multiplication"){
+        newDisplayNum = displayStoreInMemory * currentDisplayNum;
+    }else if(operatorInMemory === "division"){
+        newDisplayNum = displayStoreInMemory / currentDisplayNum;
+    }
+    displayStoreInMemory = newDisplayNum.toString();
+    operatorInMemory = operation;
+    setDisplayAsString("0")
 }
 //  note anytime you use .toLocaleString(). It limits the number of inputs
 
