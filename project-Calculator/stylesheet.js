@@ -35,6 +35,7 @@ const getDisplayAsString = () => {
     const currentDisplayString = display.textContent;
     return currentDisplayString.split(",").join("");
 }
+// getDisplayAsString is important because it will allow us to input more figures than .toLocaleString() permits
 
 const setDisplayAsString = (displayString) => {
     if (displayString[displayString.length - 1] === "." ){
@@ -42,13 +43,16 @@ const setDisplayAsString = (displayString) => {
         return;   
     }
     const [wholeNumStr, decimalStr] = displayString.split(".");
+
     // console.log(wholeNumStr, decimalStr) and see how it displays inputs
+
     if (decimalStr) {
         display.textContent = parseFloat(wholeNumStr).toLocaleString() + '.' + decimalStr;
     }else{
     display.textContent = parseFloat(wholeNumStr).toLocaleString();
 }
 }
+
 // setting currentDisplayString.split(","). join becomes necessary to stop 
 // the effect of .toLocaleString i.e limiting numbers 
 
@@ -64,6 +68,10 @@ const handleNumClick = (numString) => {
   else{
     setDisplayAsString(currentDisplayString + numString);
   }
+}
+
+const handleOperatorClick = (operation) => {
+    
 }
 //  note anytime you use .toLocaleString(). It limits the number of inputs
 
@@ -148,3 +156,6 @@ updateTime();
 
 
 
+// when writing the algorithm for a calculator, this first thing you need to do is your DOM manipulation
+// then your event listeners which will require alot of functions (like handleOperatorClick())
+// Or handleNumberClick().
