@@ -75,7 +75,13 @@ const handleNumClick = (numString) => {
 }
 
 const handleOperatorClick = (operation) => {
-    
+    const currentDisplayString =getDisplayAsString;
+    if (!displayStoreInMemory) {
+        displayStoreInMemory = currentDisplayString();
+        operatorInMemory = operation;
+        setDisplayAsString("0");
+        return
+    }
 }
 //  note anytime you use .toLocaleString(). It limits the number of inputs
 
