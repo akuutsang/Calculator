@@ -74,7 +74,6 @@ const handleNumClick = (numString) => {
   }
 }
 
-
 const getResultOfOperationAsString = () => {
     const currentDisplayNum = getDisplayAsNumber();
     const displayNumInMemory = parseFloat(displayStoreInMemory);
@@ -93,9 +92,8 @@ const getResultOfOperationAsString = () => {
 
 const handleOperatorClick = (operation) => {
     const currentDisplayString = getDisplayAsString();
-
     if (!displayStoreInMemory) {
-        displayStoreInMemory =currentDisplayString;
+        displayStoreInMemory = currentDisplayString;
         operatorInMemory = operation;
         setDisplayAsString("0");
         return;
@@ -159,7 +157,6 @@ equal.addEventListener("click", () => {
         displayStoreInMemory = null;
         operatorInMemory = null;
     }
-   
     })    
 
 // Add event listeners to buttons and numbers.
