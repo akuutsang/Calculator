@@ -18,18 +18,18 @@ body {
     position: relative;
 }
 
-.top{
+.top {
     display: flex;
     padding: 0 20px;
     height: 250px;
     flex-direction: row;
     justify-content: space-between;
 }
-.clock{
+.clock {
     font-size: xx-large;
 }
 
-.display{
+.display {
     font-size: 130px;
     font-weight: 300;
     height: 158px;
@@ -38,14 +38,14 @@ body {
     text-align: right;
 }
 
-.panels{
+.panels {
 display: grid;
 grid-template-rows: repeat(5, 1fr);
 grid-template-columns: repeat(4, 1fr);
 grid-gap: 20px;
 }
 
-.button{
+.button {
     align-items: center;
     background-color: #333;
     border-radius: 50px;
@@ -63,11 +63,11 @@ grid-gap: 20px;
     background: #a5a5a5;
 }
 
-.button.operator{
+.button.operator {
     background: #f1a33c;
 }
 
-.button.number-0{
+.button.number-0 {
     width: 250px;
     border-radius: 55px;
     justify-content:flex-start ;
@@ -76,7 +76,7 @@ grid-gap: 20px;
 }
 
 .button:active,
-.button:focus{
+.button:focus {
   filter: brightness(120%);
 }
 
