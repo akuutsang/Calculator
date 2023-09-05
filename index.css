@@ -114,6 +114,7 @@ grid-gap: 10px;
     body {
         font-family: "Helvetica Neue" sans-serif;
         margin: 15px;
+        width: 60vw;
         height:100vh;
         background-color: #f1a33c;
         align-items: center;
@@ -201,7 +202,3 @@ grid-gap: 10px;
     }
    
 }
-
-
-
-
