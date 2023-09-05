@@ -6,12 +6,13 @@
 body {
     font-family: "Helvetica Neue" sans-serif;
     margin: 25px;
+    height:100vh;
 }
 
 .calculator{
     background-color: black;
-    width: 563px;
-    height: 1218px;
+    width: 40vw;
+    height:100vh;
     border-radius: 50px;
     padding: 20px;
     color: white;
@@ -21,28 +22,30 @@ body {
 .top {
     display: flex;
     padding: 0 20px;
-    height: 250px;
+    height: 120px;
     flex-direction: row;
     justify-content: space-between;
 }
 .clock {
-    font-size: xx-large;
+    font-size: small;
 }
 
 .display {
-    font-size: 130px;
+    font-size: 70px;
     font-weight: 300;
-    height: 158px;
+    height: 80px;
     margin-bottom: 20px;
     margin-right:20px;
     text-align: right;
+    padding-right: 40px;
 }
 
 .panels {
+height:50vh ;
 display: grid;
 grid-template-rows: repeat(5, 1fr);
 grid-template-columns: repeat(4, 1fr);
-grid-gap: 20px;
+grid-gap: 10px;
 }
 
 .button {
@@ -51,27 +54,40 @@ grid-gap: 20px;
     border-radius: 50px;
     cursor: pointer;
     display: flex;
-    height: 110px;
-    width: 110px;
+    height: 70px;
+    width: 70px;
     justify-content: center;
     font-size: 45px;
     transition: filter .3s;
 }
 
 .button.function.first {
+    height: 60px;
+    width: 60px;
     color: black;
     background: #a5a5a5;
 }
 
 .button.operator {
+    height: 50px;
+    width: 60px;
     background: #f1a33c;
 }
 
+.button.decimal{
+    height: 40px;
+    width: 60px;
+    border-radius: 55px;
+    padding-right: 5px;
+}
+
 .button.number-0 {
-    width: 250px;
+    
+    height: 40px;
+    width: 200px;
     border-radius: 55px;
     justify-content:flex-start ;
-    padding-left: 43px;
+    padding-left: 10px;
     grid-column: 1 / span 2;
 }
 
@@ -81,7 +97,7 @@ grid-gap: 20px;
 }
 
 .last {
-    width: 200px;
+    width: 120px;
     height: 5px;
     background: white;
     border-radius: 4px;

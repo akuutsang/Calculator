@@ -197,3 +197,12 @@ updateTime();
 // when writing the algorithm for a calculator, this first thing you need to do is your DOM manipulation
 // then your event listeners which will require alot of functions (like handleOperatorClick())
 // Or handleNumberClick().
+
+
+
+
+
+
+
+
+
