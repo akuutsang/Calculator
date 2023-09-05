@@ -148,7 +148,6 @@ grid-gap: 10px;
         margin-bottom: 5px;
         margin-right:20px;
         text-align: right;
-        background-color: #fff;
     }
     
     .panels {
@@ -156,7 +155,6 @@ grid-gap: 10px;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 0px;
-    background-color: aqua;
     }
     
     .button {
